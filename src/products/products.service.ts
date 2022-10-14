@@ -42,7 +42,7 @@ export class ProductsService {
     this.products[index] = updatedProduct;
   }
 
-  private findProduct(id: string) {
+  private findProduct(id: string): [Product, number] {
     const prodIndex = this.products.findIndex((prod) => prod.id === id);
     const product = this.findProduct[prodIndex];
 
