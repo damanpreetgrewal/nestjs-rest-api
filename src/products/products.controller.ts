@@ -45,13 +45,18 @@ export class ProductsController {
     @Body('description') prodDesc: string,
     @Body('price') prodPrice: number,
   ) {
-    await this.productsService.updateProduct(prodId, prodTitle, prodDesc, prodPrice);
+    await this.productsService.updateProduct(
+      prodId,
+      prodTitle,
+      prodDesc,
+      prodPrice,
+    );
     return null;
   }
 
   @Delete(':id')
- async  removeProduct(@Param('id') prodId: string) {
-   await  this.productsService.deleteProduct(prodId);
+  async removeProduct(@Param('id') prodId: string) {
+    await this.productsService.deleteProduct(prodId);
     return null;
   }
 }
